@@ -1,4 +1,4 @@
-    "use client";
+"use client";
 
 import Link from "next/link";
 import {
@@ -203,8 +203,7 @@ export default function Footer() {
       <div className="border-t border-[#E9E1D3]">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-center sm:flex-row sm:px-10 sm:text-left">
           <p className="text-xs text-[#817969]">
-            © {new Date().getFullYear()} BLUE SURGE TRADING AND CONTRACTING.
-            All rights reserved.
+            © 2026 BLUE SURGE TRADING AND CONTRACTING.            All rights reserved.
           </p>
 
           <p className="flex items-center gap-1.5 text-xs text-[#817969]">
