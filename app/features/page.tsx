@@ -179,7 +179,7 @@ export default function FeaturesPage() {
     const [videoOpen, setVideoOpen] = useState(false);
 
     // Put your video URL in NEXT_PUBLIC_POGO_VIDEO_URL.
-    const videoUrl = process.env.NEXT_PUBLIC_POGO_VIDEO_URL || "";
+    const videoUrl = "/v1feat.mp4";
 
     return (
         <main className="min-h-screen overflow-hidden bg-white text-[#191919]">
