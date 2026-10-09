@@ -24,10 +24,9 @@ export default function Header() {
   };
 
   const linkClass = (href: string) =>
-    `transition-colors duration-200 hover:text-[#B89555] ${
-      isActive(href)
-        ? "font-semibold text-[#B89555]"
-        : "text-[#55514A]"
+    `transition-colors duration-200 hover:text-[#B89555] ${isActive(href)
+      ? "font-semibold text-[#B89555]"
+      : "text-[#55514A]"
     }`;
 
   return (
@@ -87,7 +86,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
-            className="rounded-full border border-[#E7DECE] p-2.5 transition hover:bg-[#F8F5EF] lg:hidden"
+            className="rounded-full border border-[#E7DECE] p-2.5 text-[#282820] transition hover:bg-[#F8F5EF] lg:hidden"
             aria-label={menuOpen ? "Close navigation" : "Open navigation"}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
