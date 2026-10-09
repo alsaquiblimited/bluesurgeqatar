@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+
 import { Menu, X, ArrowUpRight, Phone, Mail } from "lucide-react";
 
 const navLinks = [
@@ -74,10 +75,10 @@ export default function Header() {
           </a>
 
           <a
-            href="tel:+97477325525"
+            href="mailto:bluesurgeqatar0@gmail.com"
             className="hidden items-center gap-2 rounded-full bg-[#B89555] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#987540] sm:flex"
           >
-            <Phone size={15} />
+            <Mail size={15} />
             <span>Contact Us</span>
             <ArrowUpRight size={16} />
           </a>
