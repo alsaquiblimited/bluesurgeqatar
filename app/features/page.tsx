@@ -172,7 +172,6 @@ const watchColors = [
     { name: "Ocean Blue", color: "#75C9E4" },
     { name: "Blush Pink", color: "#EBA9B9" },
     { name: "Classic Black", color: "#242424" },
-    { name: "Ice Blue & White", color: "#D9EEF3" },
 ];
 
 export default function FeaturesPage() {
@@ -408,11 +407,11 @@ export default function FeaturesPage() {
                     </p>
                 </div>
 
-                <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
+                <div className="mt-10 flex flex-wrap justify-center gap-4">
                     {watchColors.map((watch) => (
                         <div
                             key={watch.name}
-                            className="rounded-2xl border border-[#E9E1D3] bg-[#FCFBF8] p-5 text-center"
+                            className="w-[calc(50%-0.5rem)] rounded-2xl border border-[#E9E1D3] bg-[#FCFBF8] p-5 text-center sm:w-48"
                         >
                             <div
                                 className="mx-auto h-10 w-10 rounded-full border border-black/10 shadow-sm"
@@ -426,61 +425,45 @@ export default function FeaturesPage() {
 
             {/* APP SECTION */}
             <section className="bg-[#F8F5EF]">
-                <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:px-10 md:py-20">
-                    <div>
-                        <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#B89555] shadow-sm">
-                            <Smartphone size={28} />
-                        </div>
+  <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-20">
+    <div className="mx-auto max-w-xl text-center">
+      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#B89555] shadow-sm">
+        <Smartphone size={28} />
+      </div>
 
-                        <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.25em] text-[#A18756]">
-                            Connected to your phone
-                        </p>
+      <p className="mt-6 text-[10px] font-bold uppercase tracking-[0.25em] text-[#A18756]">
+        Connected to your phone
+      </p>
 
-                        <h2 className="mt-4 max-w-lg text-3xl font-semibold leading-tight sm:text-4xl">
-                            Your child's world, closer to you.
-                        </h2>
+      <h2 className="mt-4 text-3xl font-semibold leading-tight sm:text-4xl">
+        Your child's world, closer to you.
+      </h2>
 
-                        <p className="mt-5 max-w-lg text-sm leading-7 text-[#706B63]">
-                            Use the compatible companion app to access available
-                            location and communication features from your phone.
-                            Supported functions depend on the watch model, app,
-                            connectivity, and service plan.
-                        </p>
+      <p className="mt-5 text-sm leading-7 text-[#706B63]">
+        Use the compatible companion app to access available
+        location and communication features from your phone.
+        Supported functions depend on the watch model, app,
+        connectivity, and service plan.
+      </p>
 
-                        <ul className="mt-6 space-y-3">
-                            {[
-                                "View location on a map",
-                                "Manage supported watch settings",
-                                "Access available safety features",
-                            ].map((item) => (
-                                <li
-                                    key={item}
-                                    className="flex items-center gap-3 text-sm text-[#514A40]"
-                                >
-                                    <CheckCircle2 size={17} className="text-[#B89555]" />
-                                    {item}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    <div className="flex min-h-[280px] items-center justify-center rounded-[2rem] border border-[#E9E1D3] bg-white p-8">
-                        <div className="max-w-sm text-center">
-                            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[1.6rem] bg-[#F8F3E9] text-[#B89555]">
-                                <MapPin size={36} strokeWidth={1.5} />
-                            </div>
-                            <h3 className="mt-5 text-lg font-semibold">
-                                Location at a glance
-                            </h3>
-                            <p className="mt-2 text-sm leading-6 text-[#81786B]">
-                                Replace this area with a screenshot of your actual
-                                POGO companion app map.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
+      <ul className="mt-6 inline-flex flex-col items-start space-y-3 text-left">
+        {[
+          "View location on a map",
+          "Manage supported watch settings",
+          "Access available safety features",
+        ].map((item) => (
+          <li
+            key={item}
+            className="flex items-center gap-3 text-sm text-[#514A40]"
+          >
+            <CheckCircle2 size={17} className="text-[#B89555]" />
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>
             {/* FINAL CTA */}
             <section className="mx-auto max-w-7xl px-5 py-16 text-center md:px-10 md:py-24">
                 <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A18756]">

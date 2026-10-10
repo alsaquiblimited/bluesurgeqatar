@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -9,89 +8,154 @@ import {
   MapPin,
   Heart,
   Watch,
-  Check,
 } from "lucide-react";
+
 const colors = [
-  
-  {
-    id: 2,
-    name: "Midnight Black",
-    watchName: "POGO Guardian",
-    accent: "#393939",
-  },
-  {
-    id: 3,
-    name: "Blush Pink",
-    watchName: "POGO Play",
-    accent: "#DDA6A6",
-  },
-  {
-    id: 4,
-    name: "Ocean Blue",
-    watchName: "POGO Active",
-    accent: "#8FAFCA",
-  },
+  { id: 2, name: "Midnight Black", watchName: "POGO Guardian", accent: "#393939" },
+  { id: 3, name: "Blush Pink", watchName: "POGO Play", accent: "#DDA6A6" },
+  { id: 4, name: "Ocean Blue", watchName: "POGO Active", accent: "#8FAFCA" },
 ];
+
+// Specs taken from the MOTTO LT53 quotation (no pricing / commercial terms)
+const specs = [
+  ["Screen", "1.4 inch IPS screen, 240x240 pixels"],
+  ["Touch panel", "G+F, lamination, Corning Glass"],
+  ["Housing", "Plastic"],
+  ["Chipset", "Unisoc UMS9117 (W117), single core, 1GHz"],
+  ["OS", "RTOS"],
+  ["Memory", "RAM 64MB + ROM 128MB"],
+  ["Location", "GPS, WiFi, LBS"],
+  ["WiFi", "Wireless 802.11 b/g/n"],
+  ["Video call", "Supported"],
+  ["2G network", "GSM B2, 3, 5, 8"],
+  ["3G network", "WCDMA B1, 2, 5, 8"],
+  ["4G network", "LTE B1, 2, 3, 5, 7, 8, 20, 28A, 38, 39, 40, 41"],
+  ["SIM card slot", "Nano SIM card"],
+  ["Contacts", "3 SOS + 15 phone numbers"],
+  ["G-sensor", "Supported"],
+  ["Camera", "0.3MP"],
+  ["Waterproof level", "IP67"],
+  ["Battery", "Polymer lithium battery, 700mAh"],
+  ["Accessories", "Magnetic charge cable, user manual, SIM card picker"],
+  ["App", "Junicare (Android and iOS)"],
+  [
+    "Other features",
+    "Pedometer, voice chat, group chat, make friends, remote camera, remote monitoring, remote shutdown, do-not-disturb mode, electronic fence (GEO), history tracking, alarm clock, find watch, phone book, bind/unbind watch",
+  ],
+];
+
 const watches = [
   {
     id: 1,
     name: "POGO Explorer",
-    category: "EVERYDAY ADVENTURE",
-    description: "A smart companion for little explorers.",
-    color: "Sand Gold",
+    model: "LT53",
     accent: "#D8C39B",
     image: "/w1.jpeg",
     badge: "BESTSELLER",
+    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
   },
   {
     id: 2,
     name: "POGO Guardian",
-    category: "SAFETY FIRST",
-    description: "Smart safety tools for everyday peace of mind.",
-    color: "Midnight Black",
+    model: "LT53",
     accent: "#D8C39B",
     image: "/w2.jpeg",
     badge: "MOST LOVED",
+    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
   },
   {
     id: 3,
     name: "POGO Play",
-    category: "MADE FOR FUN",
-    description: "A playful watch for curious minds.",
-    color: "Blush Pink",
+    model: "LT53",
     accent: "#D8C39B",
     image: "/w3.jpeg",
     badge: "NEW ARRIVAL",
+    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
   },
   {
     id: 4,
     name: "POGO Active",
-    category: "MOVE MORE",
-    description: "Ready for playgrounds and little adventures.",
-    color: "Ocean Blue",
+    model: "LT53",
     accent: "#D8C39B",
     image: "/w4.jpeg",
     badge: "",
+    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
   },
 ];
 
 const benefits = [
-  {
-    icon: MapPin,
-    title: "Know where they are",
-    description: "Location features help parents stay informed.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Safety comes first",
-    description: "Designed around reassuring parent-focused tools.",
-  },
-  {
-    icon: Heart,
-    title: "Made for little explorers",
-    description: "Comfortable styles for everyday adventures.",
-  },
+  { icon: MapPin, title: "Know where they are", description: "Location features help parents stay informed." },
+  { icon: ShieldCheck, title: "Safety comes first", description: "Designed around reassuring parent-focused tools." },
+  { icon: Heart, title: "Made for little explorers", description: "Comfortable styles for everyday adventures." },
 ];
+
+function WatchCard({ watch }) {
+  return (
+    <article className="group flex w-full flex-col overflow-hidden rounded-[1.5rem] border border-[#EAE4D9] bg-[#FCFAF6] transition duration-300 hover:border-[#D8C39B] hover:shadow-xl md:flex-row">
+      {/* Watch Image */}
+      <div
+        className="relative flex aspect-square w-full items-center justify-center overflow-hidden p-6 md:aspect-auto md:min-h-[420px] md:w-[34%] md:shrink-0 md:p-10"
+        style={{ background: `linear-gradient(145deg, #F7F3EB, ${watch.accent}35)` }}
+      >
+        {watch.badge && (
+          <span className="absolute left-4 top-4 z-10 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[9px] font-semibold tracking-[0.14em] text-[#8C7959]">
+            {watch.badge}
+          </span>
+        )}
+
+        <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white bg-white/80 text-[#817969]">
+          <Watch size={16} />
+        </div>
+
+        <img
+          src={watch.image}
+          alt={watch.name}
+          loading="lazy"
+          className="h-full max-h-[380px] rounded-2xl w-full object-contain transition duration-500 group-hover:scale-105"
+        />
+      </div>
+
+      {/* Name, model, full description */}
+      <div className="flex flex-1 flex-col p-6 md:p-10">
+        <h3 className="text-2xl font-semibold">{watch.name}</h3>
+
+        <p className="mt-1 text-sm font-semibold text-[#A98547]">
+          Model: {watch.model}
+        </p>
+
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-[#817969]">
+          {watch.summary}
+        </p>
+
+        <dl className="mt-6 grid gap-x-8 gap-y-4 border-t border-[#EAE4D9] pt-6 sm:grid-cols-2 xl:grid-cols-3">
+          {specs.map(([label, value]) => (
+            <div
+              key={label}
+              className={label === "Other features" ? "sm:col-span-2 xl:col-span-3" : ""}
+            >
+              <dt className="text-[11px] font-semibold text-[#A98547]">{label}</dt>
+              <dd className="mt-0.5 text-sm leading-6 text-[#5E584C]">{value}</dd>
+            </div>
+          ))}
+        </dl>
+
+        <div className="mt-6 border-t border-[#EAE4D9] pt-5">
+          <Link
+            href="/contact"
+            aria-label={`Contact us about ${watch.name}`}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#A98547] transition hover:text-[#806334]"
+          >
+            contact
+            <ArrowUpRight
+              size={17}
+              className="transition-transform group-hover:translate-x-1"
+            />
+          </Link>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 export default function WatchPage() {
   return (
@@ -111,9 +175,7 @@ export default function WatchPage() {
             <h1 className="mt-7 max-w-xl text-5xl font-semibold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
               Little wrists.
               <br />
-              <span className="font-serif italic text-[#B89555]">
-                Big adventures.
-              </span>
+              <span className="font-serif italic text-[#B89555]">Big adventures.</span>
             </h1>
 
             <p className="mt-6 max-w-lg text-base leading-8 text-[#777064] md:text-lg">
@@ -188,12 +250,9 @@ export default function WatchPage() {
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#F0E8D9] text-[#A98547]">
               <Icon size={22} />
             </div>
-
             <div>
               <h2 className="font-semibold">{title}</h2>
-              <p className="mt-2 text-sm leading-6 text-[#817969]">
-                {description}
-              </p>
+              <p className="mt-2 text-sm leading-6 text-[#817969]">{description}</p>
             </div>
           </div>
         ))}
@@ -206,11 +265,9 @@ export default function WatchPage() {
             <p className="text-[10px] font-semibold tracking-[0.24em] text-[#B89555]">
               A SHADE FOR EVERY LITTLE PERSONALITY
             </p>
-
             <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
               Find their perfect color.
             </h2>
-
             <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-[#817969]">
               From timeless neutrals to playful colors, discover the POGO
               watch styles available for your little explorer.
@@ -218,29 +275,23 @@ export default function WatchPage() {
           </div>
 
           <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3 sm:gap-6">
-  {colors.map((color) => (
-    <a
-      key={color.id}
-      href="#collection"
-      className="group rounded-2xl border border-[#E5DCCB] bg-white p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-[#D8C39B] hover:shadow-lg sm:p-7"
-    >
-      <div className="flex justify-center">
-        <span
-          className="h-12 w-12 rounded-full border-[5px] border-white shadow-md ring-1 ring-[#E8E0D3] transition duration-300 group-hover:scale-110 sm:h-16 sm:w-16"
-          style={{ backgroundColor: color.accent }}
-        />
-      </div>
-
-      <h3 className="mt-4 text-sm font-semibold sm:text-base">
-        {color.name}
-      </h3>
-
-      <p className="mt-1 text-xs text-[#817969]">
-        {color.watchName}
-      </p>
-    </a>
-  ))}
-</div>
+            {colors.map((color) => (
+              <a
+                key={color.id}
+                href="#collection"
+                className="group rounded-2xl border border-[#E5DCCB] bg-white p-5 text-center transition duration-300 hover:-translate-y-1 hover:border-[#D8C39B] hover:shadow-lg sm:p-7"
+              >
+                <div className="flex justify-center">
+                  <span
+                    className="h-12 w-12 rounded-full border-[5px] border-white shadow-md ring-1 ring-[#E8E0D3] transition duration-300 group-hover:scale-110 sm:h-16 sm:w-16"
+                    style={{ backgroundColor: color.accent }}
+                  />
+                </div>
+                <h3 className="mt-4 text-sm font-semibold sm:text-base">{color.name}</h3>
+                <p className="mt-1 text-xs text-[#817969]">{color.watchName}</p>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -252,82 +303,20 @@ export default function WatchPage() {
               <p className="text-[10px] font-semibold tracking-[0.24em] text-[#B89555]">
                 FIND THEIR PERFECT MATCH
               </p>
-
               <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
                 Explore our watches.
               </h2>
-
               <p className="mt-3 max-w-xl text-sm leading-7 text-[#817969]">
                 Thoughtfully designed companions for different personalities,
                 routines, and adventures.
               </p>
             </div>
-
-            <span className="text-sm text-[#817969]">
-              {watches.length} styles to explore
-            </span>
+            <span className="text-sm text-[#817969]">{watches.length} styles to explore</span>
           </div>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 flex flex-col gap-8">
             {watches.map((watch) => (
-              <article
-                key={watch.id}
-                className="group overflow-hidden rounded-[1.5rem] border border-[#EAE4D9] bg-[#FCFAF6] transition duration-300 hover:-translate-y-1 hover:border-[#D8C39B] hover:shadow-xl"
-              >
-                {/* Watch Image */}
-                <div
-                  className="relative flex aspect-square items-center justify-center overflow-hidden p-5"
-                  style={{
-                    background: `linear-gradient(145deg, #F7F3EB, ${watch.accent}35)`,
-                  }}
-                >
-                  {watch.badge && (
-                    <span className="absolute left-4 top-4 z-10 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 text-[9px] font-semibold tracking-[0.14em] text-[#8C7959]">
-                      {watch.badge}
-                    </span>
-                  )}
-
-                  <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white bg-white/80 text-[#817969]">
-                    <Watch size={16} />
-                  </div>
-
-                  <img
-                    src={watch.image}
-                    alt={watch.name}
-                    loading="lazy"
-                    className="h-full w-full  object-contain transition duration-500 group-hover:scale-105"
-                  />
-                </div>
-
-                {/* Watch Name and Description Only */}
-                <div className="p-5">
-                  <p className="text-[9px] font-semibold tracking-[0.18em] text-[#B89555]">
-                    {watch.category}
-                  </p>
-
-                  <h3 className="mt-2 text-xl font-semibold">
-                    {watch.name}
-                  </h3>
-
-                  <p className="mt-2 min-h-[48px] text-sm leading-6 text-[#817969]">
-                    {watch.description}
-                  </p>
-
-                  <div className="mt-5 border-t border-[#EAE4D9] pt-4">
-                    <Link
-                      href={`/contact`}
-                      aria-label={`Explore ${watch.name}`}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#A98547] transition hover:text-[#806334]"
-                    >
-                      contact
-                      <ArrowUpRight
-                        size={17}
-                        className="transition-transform group-hover:translate-x-1"
-                      />
-                    </Link>
-                  </div>
-                </div>
-              </article>
+              <WatchCard key={watch.id} watch={watch} />
             ))}
           </div>
         </div>
@@ -337,21 +326,17 @@ export default function WatchPage() {
       <section className="px-5 py-16 md:px-10 md:py-24">
         <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#282820] px-7 py-12 text-center text-white sm:px-12 sm:py-16">
           <div className="absolute -right-16 -top-24 h-64 w-64 rounded-full bg-[#B89555]/20 blur-3xl" />
-
           <div className="relative">
             <p className="text-[10px] font-semibold tracking-[0.25em] text-[#D8BC84]">
               THEIR WORLD IS WAITING
             </p>
-
             <h2 className="mx-auto mt-5 max-w-2xl text-3xl font-semibold leading-tight sm:text-5xl">
               Every little adventure deserves a companion.
             </h2>
-
             <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-white/65">
               Discover the POGO watch that fits your little explorer and your
               family&apos;s everyday needs.
             </p>
-
             <Link
               href="/features"
               className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#B89555] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#C8A969]"

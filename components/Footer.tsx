@@ -48,26 +48,25 @@ export default function Footer() {
             <Link
               href="/"
               className="inline-flex items-center gap-3"
-              aria-label="Blue Surge Trading and Contracting home"
+              aria-label="Pogokids Watches home"
             >
               <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#B89555] text-white shadow-sm">
-                <span className="text-xl font-extrabold">BS</span>
+                <span className="text-xl font-extrabold">PK</span>
               </span>
 
               <span className="min-w-0">
                 <span className="block text-lg font-extrabold leading-6 tracking-wide sm:text-xl">
-                  BLUE SURGE
+                  POGOKIDS
                 </span>
                 <span className="mt-1 block text-[9px] font-semibold uppercase leading-4 tracking-[0.12em] text-[#A18756]">
-                  Trading and Contracting
+                  Watches
                 </span>
               </span>
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-[#817969]">
-              BLUE SURGE TRADING AND CONTRACTING brings you POGO
-              smartwatches, helping families stay connected while little
-              explorers discover their world.
+              Pogokids Watches brings you POGO smartwatches, helping families
+              stay connected while little explorers discover their world.
             </p>
 
             {/* Social Media */}
@@ -203,7 +202,7 @@ export default function Footer() {
       <div className="border-t border-[#E9E1D3]">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-5 text-center sm:flex-row sm:px-10 sm:text-left">
           <p className="text-xs text-[#817969]">
-            © 2026 BLUE SURGE TRADING AND CONTRACTING.            All rights reserved.
+            © 2026 Pogokids Watches. All rights reserved.
           </p>
 
           <p className="flex items-center gap-1.5 text-xs text-[#817969]">

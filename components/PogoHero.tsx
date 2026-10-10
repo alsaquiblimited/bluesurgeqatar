@@ -109,31 +109,31 @@ export default function PogoHero() {
         </nav>
 
         {/* MOBILE MENU */}
-        {menuOpen && (
-          <div className="border-t border-[#E9E1D3] bg-white px-6 py-5 md:hidden">
-            <div className="flex flex-col gap-5 text-sm font-medium text-[#39352E]">
-              {[
-                ["Home", "#home"],
-                ["Our Watch", "#watch"],
-                ["Features", "#features"],
-                ["About Us", "#about"],
-              ].map(([label, href]) => (
-                <a key={href} href={href} onClick={closeMenu}>
-                  {label}
-                </a>
-              ))}
-
-              <a
-                href="#watch"
-                onClick={closeMenu}
-                className="flex items-center justify-center gap-2 rounded-full bg-[#B89555] px-5 py-3 text-white"
-              >
-                Explore Watch <ArrowUpRight size={17} />
+      {menuOpen && (
+        <div className="border-t border-[#E9E1D3] bg-white px-6 py-5 md:hidden">
+          <div className="flex flex-col gap-5 text-sm font-medium text-[#39352E]">
+            {[
+              ["Home", "#home"],
+              ["Our Watch", "#watch"],
+              ["Features", "#features"],
+              ["About Us", "#about"],
+            ].map(([label, href]) => (
+              <a key={href} href={href} onClick={closeMenu}>
+                {label}
               </a>
-            </div>
+            ))}
+
+            <a
+              href="#watch"
+              onClick={closeMenu}
+              className="flex items-center justify-center gap-2 rounded-full bg-[#B89555] px-5 py-3 text-white"
+            >
+              Explore Watch <ArrowUpRight size={17} />
+            </a>
           </div>
-        )}
-      {/* </header> */} 
+        </div>
+      )}
+      {/* </header> */}
 
       {/* HERO SECTION */}
       <section
@@ -234,11 +234,10 @@ export default function PogoHero() {
           {features.map(({ icon: Icon, title, description }, index) => (
             <div
               key={title}
-              className={`flex items-start gap-4 py-6 md:px-5 md:py-8 ${
-                index !== features.length - 1
-                  ? "border-b border-[#E9E1D3] md:border-b-0 md:border-r"
-                  : ""
-              }`}
+              className={`flex items-start gap-4 py-6 md:px-5 md:py-8 ${index !== features.length - 1
+                ? "border-b border-[#E9E1D3] md:border-b-0 md:border-r"
+                : ""
+                }`}
             >
               <div className="shrink-0 rounded-2xl border border-[#E7D8BB] bg-white p-3 text-[#B89555]">
                 <Icon size={22} strokeWidth={1.7} />
@@ -257,71 +256,71 @@ export default function PogoHero() {
       </section>
 
       {/* VIDEO GALLERY SECTION */}
-<section
-  id="gallery"
-  className="border-b border-[#E9E1D3] bg-[#FAF8F3] px-5 py-16 md:px-10 md:py-24"
->
-  <div className="mx-auto max-w-7xl">
-    {/* Section Heading */}
-    <div className="mx-auto max-w-2xl text-center">
-      <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A18756]">
-        A closer look at POGO
-      </p>
+      <section
+        id="gallery"
+        className="border-b border-[#E9E1D3] bg-[#FAF8F3] px-5 py-16 md:px-10 md:py-24"
+      >
+        <div className="mx-auto max-w-7xl">
+          {/* Section Heading */}
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A18756]">
+              A closer look at POGO
+            </p>
 
-      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#292720] sm:text-4xl md:text-5xl">
-        Small watch. <span className="font-serif italic text-[#B89555]">Big possibilities.</span>
-      </h2>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#292720] sm:text-4xl md:text-5xl">
+              Small watch. <span className="font-serif italic text-[#B89555]">Big possibilities.</span>
+            </h2>
 
-      <p className="mt-5 text-sm leading-7 text-[#817969] md:text-base">
-        Discover how POGO brings everyday adventures, smart features,
-        and peace of mind together in one little companion.
-      </p>
-    </div>
+            <p className="mt-5 text-sm leading-7 text-[#817969] md:text-base">
+              Discover how POGO brings everyday adventures, smart features,
+              and peace of mind together in one little companion.
+            </p>
+          </div>
 
-    {/* Video Gallery */}
-    <div className="relative mx-auto mt-10 max-w-5xl">
-      <div className="absolute -inset-3 rounded-[2rem] bg-[#E9DCC0]/40 blur-2xl" />
+          {/* Video Gallery */}
+          <div className="relative mx-auto mt-10 max-w-5xl">
+            <div className="absolute -inset-3 rounded-[2rem] bg-[#E9DCC0]/40 blur-2xl" />
 
-      <div className="relative overflow-hidden rounded-[1.5rem] border border-[#E5DCCB] bg-white p-2 shadow-xl sm:rounded-[2rem] sm:p-3">
-         <video
-                                src="/v2.mp4"
-                                autoPlay
-                                muted
-                                loop
-                                playsInline
-                                controls
-                                preload="metadata"
-                                className="h-full w-full object-cover"
-                                aria-label="POGO kids smartwatch product video"
-                            >
-                                Your browser does not support video playback.
-                            </video>
-      </div>
+            <div className="relative overflow-hidden rounded-[1.5rem] border border-[#E5DCCB] bg-white p-2 shadow-xl sm:rounded-[2rem] sm:p-3">
+              <video
+                src="/v2.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                preload="metadata"
+                className="h-full w-full object-cover"
+                aria-label="POGO kids smartwatch product video"
+              >
+                Your browser does not support video playback.
+              </video>
+            </div>
 
-      {/* Caption */}
-      <div className="mt-5 flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
-        <div>
-          <h3 className="text-base font-semibold text-[#292720]">
-            Meet your child&apos;s everyday companion
-          </h3>
-          <p className="mt-1 text-sm text-[#817969]">
-            Explore the world of POGO, one adventure at a time.
-          </p>
+            {/* Caption */}
+            <div className="mt-5 flex flex-col items-center justify-between gap-3 text-center sm:flex-row sm:text-left">
+              <div>
+                <h3 className="text-base font-semibold text-[#292720]">
+                  Meet your child&apos;s everyday companion
+                </h3>
+                <p className="mt-1 text-sm text-[#817969]">
+                  Explore the world of POGO, one adventure at a time.
+                </p>
+              </div>
+
+              <a
+                href="/v1feat.mp4"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#DED4C2] px-5 py-3 text-sm font-semibold text-[#514A3F] transition hover:border-[#B89555] hover:bg-white"
+              >
+                View video
+                <ArrowUpRight size={16} />
+              </a>
+            </div>
+          </div>
         </div>
-
-        <a
-          href="/v1feat.mp4"
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex shrink-0 items-center gap-2 rounded-full border border-[#DED4C2] px-5 py-3 text-sm font-semibold text-[#514A3F] transition hover:border-[#B89555] hover:bg-white"
-        >
-          View video
-          <ArrowUpRight size={16} />
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* ABOUT SECTION */}
       <section
@@ -365,6 +364,56 @@ export default function PogoHero() {
           Discover POGO <ArrowUpRight size={18} />
         </a>
       </section>
+
+      {/* CUSTOMER REVIEW VIDEO SECTION */}
+<section
+  id="customer-review"
+  className="border-t border-[#E9E1D3] bg-[#FCFBF8] px-5 py-16 md:px-10 md:py-24"
+>
+  <div className="mx-auto max-w-7xl">
+    <div className="mx-auto max-w-2xl text-center">
+      <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A18756]">
+        Real experiences. Real trust.
+      </p>
+
+      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#292720] sm:text-4xl md:text-5xl">
+        Hear it from our{" "}
+        <span className="font-serif italic text-[#B89555]">
+          customers.
+        </span>
+      </h2>
+
+      <p className="mt-5 text-sm leading-7 text-[#817969] md:text-base">
+        See what our customers have to say about POGO Kids Watches.
+      </p>
+    </div>
+
+    <div className="relative mx-auto mt-10 max-w-4xl">
+      <div className="absolute -inset-3 rounded-[2rem] bg-[#E9DCC0]/40 blur-2xl" />
+
+      <div className="relative flex justify-center rounded-3xl border border-[#E5DCCB] bg-white p-3 shadow-xl">
+        <div className="aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-2xl bg-black">
+          <iframe
+            src="https://www.youtube.com/embed/ee90Qy5IQ7I"
+            title="POGO Kids Watches customer review"
+            className="h-full w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
+
+    <p className="mt-6 text-center text-xs text-[#817969]">
+      Thank you for trusting POGO with your little explorers.
+    </p>
+  </div>
+</section>
+
+
+
+
     </main>
   );
 }

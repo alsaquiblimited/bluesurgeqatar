@@ -38,15 +38,15 @@ export default function Header() {
           href="/"
           onClick={closeMenu}
           className="min-w-0 max-w-[230px]"
-          aria-label="Blue Surge Trading and Contracting home"
+          aria-label="POGO Kids Watches home"
         >
           <span className="block text-sm font-extrabold uppercase leading-5 tracking-wide text-[#282820] sm:text-base md:text-lg">
-            BLUE SURGE
+            POGO KIDS
             <span className="text-[#B89555]">.</span>
           </span>
 
           <span className="mt-1 block text-[9px] font-semibold uppercase leading-4 tracking-[0.12em] text-[#81745F] sm:text-[10px]">
-            Trading and Contracting
+            Kids Watches
           </span>
         </Link>
 
@@ -119,65 +119,66 @@ export default function Header() {
             <div className="border-t border-[#E9E1D3]" />
 
             <div>
-              <p className="font-bold uppercase leading-5 text-[#282820]">
-                BLUE SURGE TRADING AND CONTRACTING
-              </p>
-              <p className="mt-1 text-xs text-[#817969]">
-                Official Contact · Qatar
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-3">
-              <a
-                href="tel:+97477325525"
-                onClick={closeMenu}
-                className="flex items-center gap-3 text-[#55514A] hover:text-[#B89555]"
-              >
-                <Phone size={17} className="text-[#B89555]" />
-                +974 7732 5525
-              </a>
-
-              <a
-                href="tel:+97477326773"
-                onClick={closeMenu}
-                className="flex items-center gap-3 text-[#55514A] hover:text-[#B89555]"
-              >
-                <Phone size={17} className="text-[#B89555]" />
-                +974 7732 6773
-              </a>
-            </div>
-
-            <div className="flex flex-col gap-3">
-              <a
-                href="mailto:bluesurgeqatar974@gmail.com"
-                onClick={closeMenu}
-                className="flex items-start gap-3 break-all text-[#55514A] hover:text-[#B89555]"
-              >
-                <Mail size={17} className="mt-0.5 shrink-0 text-[#B89555]" />
-                bluesurgeqatar974@gmail.com
-              </a>
-
-              <a
-                href="mailto:pogoqatar974@gmail.com"
-                onClick={closeMenu}
-                className="flex items-start gap-3 break-all text-[#55514A] hover:text-[#B89555]"
-              >
-                <Mail size={17} className="mt-0.5 shrink-0 text-[#B89555]" />
-                pogoqatar974@gmail.com
-              </a>
-            </div>
-
-            <Link
-              href="/watch"
-              onClick={closeMenu}
-              className="flex items-center justify-center gap-2 rounded-full bg-[#B89555] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[#987540]"
-            >
-              Explore Watches
-              <ArrowUpRight size={17} />
-            </Link>
+  <p className="font-bold uppercase leading-5 text-[#282820]">
+              POGO KIDS WATCHES
+            </p>
+            <p className="mt-1 text-xs text-[#817969]">
+              Official Contact · Qatar
+            </p>
           </div>
+
+          <div className="flex flex-col gap-3">
+            <a
+              href="tel:+97477325525"
+              onClick={closeMenu}
+              className="flex items-center gap-3 text-[#55514A] hover:text-[#B89555]"
+            >
+              <Phone size={17} className="text-[#B89555]" />
+              +974 7732 5525
+            </a>
+
+            <a
+              href="tel:+97477326773"
+              onClick={closeMenu}
+              className="flex items-center gap-3 text-[#55514A] hover:text-[#B89555]"
+            >
+              <Phone size={17} className="text-[#B89555]" />
+              +974 7732 6773
+            </a>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            <a
+              href="mailto:bluesurgeqatar974@gmail.com"
+              onClick={closeMenu}
+              className="flex items-start gap-3 break-all text-[#55514A] hover:text-[#B89555]"
+            >
+              <Mail size={17} className="mt-0.5 shrink-0 text-[#B89555]" />
+              bluesurgeqatar974@gmail.com
+            </a>
+
+            <a
+              href="mailto:pogoqatar974@gmail.com"
+              onClick={closeMenu}
+              className="flex items-start gap-3 break-all text-[#55514A] hover:text-[#B89555]"
+            >
+              <Mail size={17} className="mt-0.5 shrink-0 text-[#B89555]" />
+              pogoqatar974@gmail.com
+            </a>
+          </div>
+
+          <Link
+            href="/watch"
+            onClick={closeMenu}
+            className="flex items-center justify-center gap-2 rounded-full bg-[#B89555] px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-[#987540]"
+          >
+            Explore Watches
+            <ArrowUpRight size={17} />
+          </Link>
         </div>
-      )}
-    </header>
+        </div>
+  )
+}
+    </header >
   );
 }
