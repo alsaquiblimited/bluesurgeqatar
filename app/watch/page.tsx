@@ -89,8 +89,18 @@ const benefits = [
   { icon: Heart, title: "Made for little explorers", description: "Comfortable styles for everyday adventures." },
 ];
 
-function WatchCard({ watch }) {
-  return (
+type WatchItem = {
+  id: number;
+  name: string;
+  model: string;
+  accent: string;
+  image: string;
+  badge: string;
+  summary: string;
+};
+
+function WatchCard({ watch }: { watch: WatchItem }) {
+   return (
     <article className="group flex w-full flex-col overflow-hidden rounded-[1.5rem] border border-[#EAE4D9] bg-[#FCFAF6] transition duration-300 hover:border-[#D8C39B] hover:shadow-xl md:flex-row">
       {/* Watch Image */}
       <div
