@@ -153,7 +153,7 @@ export default function ContactPage() {
               </div>
 
               <h2 className="mt-5 text-2xl font-semibold tracking-tight">
-                BLUE SURGE TRADING AND CONTRACTING
+                Pogokids Watches
               </h2>
 
               <p className="mt-3 text-sm leading-6 text-[#817969]">
@@ -283,9 +283,10 @@ export default function ContactPage() {
                 </h3>
 
                 <p className="mt-2 text-sm leading-6 text-[#817969]">
-                  Our team at Blue Surge has received your inquiry and will
-                  get back to you shortly. You can also contact us directly using
-                  the phone numbers or email addresses listed on this page.
+                  Our team at Pogokids Watches has received your inquiry and
+                  will get back to you shortly. You can also contact us
+                  directly using the phone numbers or email addresses listed
+                  on this page.
                 </p>
 
                 <button
@@ -451,8 +452,8 @@ export default function ContactPage() {
                 </button>
 
                 <p className="text-xs leading-5 text-[#817969]">
-                  Your details are sent directly to our team at Blue Surge.
-                  We will get back to you promptly.
+                  Your details are sent directly to our team at Pogokids
+                  Watches. We will get back to you promptly.
                 </p>
               </form>
             )}

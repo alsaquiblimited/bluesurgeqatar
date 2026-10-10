@@ -8,6 +8,7 @@ import {
   MapPin,
   Heart,
   Watch,
+  FileText,
 } from "lucide-react";
 
 const colors = [
@@ -16,8 +17,10 @@ const colors = [
   { id: 4, name: "Ocean Blue", watchName: "POGO Active", accent: "#8FAFCA" },
 ];
 
-// Specs taken from the MOTTO LT53 quotation (no pricing / commercial terms)
-const specs = [
+type Spec = [string, string];
+
+// LT53 specs (POGO Explorer and POGO Guardian) - from the MOTTO quotation
+const specsLT53: Spec[] = [
   ["Screen", "1.4 inch IPS screen, 240x240 pixels"],
   ["Touch panel", "G+F, lamination, Corning Glass"],
   ["Housing", "Plastic"],
@@ -44,49 +47,36 @@ const specs = [
   ],
 ];
 
-const watches = [
-  {
-    id: 1,
-    name: "POGO Explorer",
-    model: "LT53",
-    accent: "#D8C39B",
-    image: "/w1.jpeg",
-    badge: "BESTSELLER",
-    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
-  },
-  {
-    id: 2,
-    name: "POGO Guardian",
-    model: "LT53",
-    accent: "#D8C39B",
-    image: "/w2.jpeg",
-    badge: "MOST LOVED",
-    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
-  },
-  {
-    id: 3,
-    name: "POGO Play",
-    model: "LT53",
-    accent: "#D8C39B",
-    image: "/w3.jpeg",
-    badge: "NEW ARRIVAL",
-    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
-  },
-  {
-    id: 4,
-    name: "POGO Active",
-    model: "LT53",
-    accent: "#D8C39B",
-    image: "/w4.jpeg",
-    badge: "",
-    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
-  },
-];
-
-const benefits = [
-  { icon: MapPin, title: "Know where they are", description: "Location features help parents stay informed." },
-  { icon: ShieldCheck, title: "Safety comes first", description: "Designed around reassuring parent-focused tools." },
-  { icon: Heart, title: "Made for little explorers", description: "Comfortable styles for everyday adventures." },
+// LT51 specs (POGO Play and POGO Active) - from the POGO LT51 listing file
+const specsLT51: Spec[] = [
+  ["Screen", "1.32 inch IPS touch screen, 320x320 pixels"],
+  ["Touch panel", "Full lamination, 2.5D"],
+  ["Housing", "Plastic housing, UV (front housing) + rubber painting"],
+  ["Chipset", "Spreadtrum SL8521E, 1.2GHz dual-core ARM Cortex A7MP"],
+  ["OS", "Android 8.1"],
+  ["Memory", "RAM 1GB + ROM 8GB"],
+  ["GPS", "SL8521E, L1 1575.42MHz C/A code, 22CH"],
+  ["Location", "GPS, AGPS, LBS, WiFi"],
+  ["WiFi", "Wireless 802.11 b/g/n"],
+  ["Video call", "By app or VoLTE"],
+  ["2G network", "GSM B2/3/8"],
+  ["3G network", "WCDMA B1/2/8"],
+  ["4G network", "LTE B1, 3, 7, 8, 20, 28A, 38, 39, 40, 41"],
+  ["SIM card slot", "Nano SIM card"],
+  ["Calling", "3 SOS + 15 phone numbers"],
+  ["SOS", "Supported"],
+  ["G-sensor", "Supported (three axis)"],
+  ["Remote monitoring", "Supported"],
+  ["Camera", "0.3MP"],
+  ["Waterproof level", "IP67 (water resistant)"],
+  ["Battery", "Lithium battery, 700mAh, 642731"],
+  ["Dimension", "47.3 x 42.2 x 16 mm / 55g"],
+  ["Accessories", "Magnetic USB cable, SIM card picker and user manual"],
+  ["App", "JuniCare (Android and iOS)"],
+  [
+    "Other features",
+    "Pedometer, electronic fence (GEO), history tracking, alarm clock, find watch, phone book, working mode, remote shutdown",
+  ],
 ];
 
 type WatchItem = {
@@ -97,10 +87,65 @@ type WatchItem = {
   image: string;
   badge: string;
   summary: string;
+  specs: Spec[];
+  manual?: string; // path to the PDF manual in /public
 };
 
+const watches: WatchItem[] = [
+  {
+    id: 1,
+    name: "POGO Explorer",
+    model: "LT53",
+    accent: "#D8C39B",
+    image: "/w1.jpeg",
+    badge: "BESTSELLER",
+    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
+    specs: specsLT53,
+    manual: "/manuals/LT53Manual.pdf",
+  },
+  {
+    id: 2,
+    name: "POGO Guardian",
+    model: "LT53",
+    accent: "#D8C39B",
+    image: "/w2.jpeg",
+    badge: "MOST LOVED",
+    summary: "4G GPS kids smartwatch with video call and IP67 waterproofing.",
+    specs: specsLT53,
+    manual: "/manuals/lt53-manual.pdf",
+  },
+  {
+    id: 3,
+    name: "POGO Play",
+    model: "LT51",
+    accent: "#D8C39B",
+    image: "/w3.jpeg",
+    badge: "NEW ARRIVAL",
+    summary:
+      "4G GPS kids smartwatch with Android 8.1, video call and IP67 water resistance.",
+    specs: specsLT51,
+  },
+  {
+    id: 4,
+    name: "POGO Active",
+    model: "LT51",
+    accent: "#D8C39B",
+    image: "/w4.jpeg",
+    badge: "",
+    summary:
+      "4G GPS kids smartwatch with Android 8.1, video call and IP67 water resistance.",
+    specs: specsLT51,
+  },
+];
+
+const benefits = [
+  { icon: MapPin, title: "Know where they are", description: "Location features help parents stay informed." },
+  { icon: ShieldCheck, title: "Safety comes first", description: "Designed around reassuring parent-focused tools." },
+  { icon: Heart, title: "Made for little explorers", description: "Comfortable styles for everyday adventures." },
+];
+
 function WatchCard({ watch }: { watch: WatchItem }) {
-   return (
+  return (
     <article className="group flex w-full flex-col overflow-hidden rounded-[1.5rem] border border-[#EAE4D9] bg-[#FCFAF6] transition duration-300 hover:border-[#D8C39B] hover:shadow-xl md:flex-row">
       {/* Watch Image */}
       <div
@@ -121,7 +166,7 @@ function WatchCard({ watch }: { watch: WatchItem }) {
           src={watch.image}
           alt={watch.name}
           loading="lazy"
-          className="h-full max-h-[380px] rounded-2xl w-full object-contain transition duration-500 group-hover:scale-105"
+          className="h-full max-h-[380px] w-full rounded-2xl object-contain transition duration-500 group-hover:scale-105"
         />
       </div>
 
@@ -138,7 +183,7 @@ function WatchCard({ watch }: { watch: WatchItem }) {
         </p>
 
         <dl className="mt-6 grid gap-x-8 gap-y-4 border-t border-[#EAE4D9] pt-6 sm:grid-cols-2 xl:grid-cols-3">
-          {specs.map(([label, value]) => (
+          {watch.specs.map(([label, value]) => (
             <div
               key={label}
               className={label === "Other features" ? "sm:col-span-2 xl:col-span-3" : ""}
@@ -149,11 +194,11 @@ function WatchCard({ watch }: { watch: WatchItem }) {
           ))}
         </dl>
 
-        <div className="mt-6 border-t border-[#EAE4D9] pt-5">
+        <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-[#EAE4D9] pt-5">
           <Link
             href="/contact"
             aria-label={`Contact us about ${watch.name}`}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#A98547] transition hover:text-[#806334]"
+            className="inline-flex items-center gap-2 rounded-full border border-[#D8C39B] px-5 py-2.5 text-sm font-semibold text-[#A98547] transition hover:bg-[#F3EBDD] hover:text-[#806334]"
           >
             contact
             <ArrowUpRight
@@ -161,6 +206,19 @@ function WatchCard({ watch }: { watch: WatchItem }) {
               className="transition-transform group-hover:translate-x-1"
             />
           </Link>
+
+          {watch.manual && (
+            <a
+              href={watch.manual}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open the ${watch.model} manual (PDF)`}
+              className="inline-flex items-center gap-2 rounded-full bg-[#B89555] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#987540]"
+            >
+              <FileText size={16} />
+              Manual
+            </a>
+          )}
         </div>
       </div>
     </article>
