@@ -15,12 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BLUE SURGE TRADING AND CONTRACTING",
+  title: "Pogokids Watches",
   icons: {
     icon: "/favicon.png",
     apple: "/apple-icon.png",
   },
-  description: "BLUE SURGE TRADING AND CONTRACTING brings you POGO smartwatches, helping families stay connected while little explorers discover their world.",
+  description:
+    "Pogokids Watches brings you POGO smartwatches, helping families stay connected while little explorers discover their world.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
