@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa";
 import { Menu, X, ArrowUpRight, Phone, Mail } from "lucide-react";
@@ -39,21 +40,21 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#E9E1D3] bg-white/95 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4 md:px-10">
-        {/* Company Name */}
+        {/* Logo */}
         <Link
           href="/"
           onClick={closeMenu}
-          className="min-w-0 max-w-[230px]"
+          className="flex shrink-0 items-center"
           aria-label="POGO Kids Watches home"
         >
-          <span className="block text-sm font-extrabold uppercase leading-5 tracking-wide text-[#282820] sm:text-base md:text-lg">
-            POGO KIDS
-            <span className="text-[#B89555]">.</span>
-          </span>
-
-          <span className="mt-1 block text-[9px] font-semibold uppercase leading-4 tracking-[0.12em] text-[#81745F] sm:text-[10px]">
-            Kids Watches
-          </span>
+          <Image
+            src="/pogo-logo.png"
+            alt="POGO Kids Watches"
+            width={915}
+            height={373}
+            priority
+            className="h-10 w-auto sm:h-12"
+          />
         </Link>
 
         {/* Desktop Navigation */}

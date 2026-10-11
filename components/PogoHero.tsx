@@ -365,55 +365,53 @@ export default function PogoHero() {
         </a>
       </section>
 
-      {/* CUSTOMER REVIEW VIDEO SECTION */}
-<section
-  id="customer-review"
-  className="border-t border-[#E9E1D3] bg-[#FCFBF8] px-5 py-16 md:px-10 md:py-24"
->
-  <div className="mx-auto max-w-7xl">
-    <div className="mx-auto max-w-2xl text-center">
-      <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A18756]">
-        Real experiences. Real trust.
-      </p>
+      {/* WATCH VIDEO SECTION */}
+      <section
+        id="watch-video"
+        className="border-t border-[#E9E1D3] bg-[#FCFBF8] px-5 py-16 md:px-10 md:py-24"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#A18756]">
+              See it in action
+            </p>
 
-      <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#292720] sm:text-4xl md:text-5xl">
-        Hear it from our{" "}
-        <span className="font-serif italic text-[#B89555]">
-          customers.
-        </span>
-      </h2>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#292720] sm:text-4xl md:text-5xl">
+              Meet the{" "}
+              <span className="font-serif italic text-[#B89555]">
+                POGO watch.
+              </span>
+            </h2>
 
-      <p className="mt-5 text-sm leading-7 text-[#817969] md:text-base">
-        See what our customers have to say about POGO Kids Watches.
-      </p>
-    </div>
+            <p className="mt-5 text-sm leading-7 text-[#817969] md:text-base">
+              Watch how POGO Kids Watches keep little explorers connected and
+              parents reassured.
+            </p>
+          </div>
 
-    <div className="relative mx-auto mt-10 max-w-4xl">
-      <div className="absolute -inset-3 rounded-[2rem] bg-[#E9DCC0]/40 blur-2xl" />
+          <div className="relative mx-auto mt-10 max-w-4xl">
+            <div className="pointer-events-none absolute -inset-3 rounded-[2rem] bg-[#E9DCC0]/40 blur-2xl" />
 
-      <div className="relative flex justify-center rounded-3xl border border-[#E5DCCB] bg-white p-3 shadow-xl">
-        <div className="aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-2xl bg-black">
-          <iframe
-            src="https://www.youtube.com/embed/ee90Qy5IQ7I"
-            title="POGO Kids Watches customer review"
-            className="h-full w-full"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
+            <div className="relative rounded-3xl border border-[#E5DCCB] bg-white p-3 shadow-xl">
+              <video
+                className="max-h-[80vh] w-full rounded-2xl bg-black object-contain"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                preload="metadata"
+              >
+                <source src="/pogo-watch.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <p className="mt-6 text-center text-xs text-[#817969]">
-      Thank you for trusting POGO with your little explorers.
-    </p>
-  </div>
-</section>
+      </section>
 
 
 
-
-    </main>
+    </main >
   );
 }

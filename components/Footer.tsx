@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import {
   FaFacebookF,
   FaYoutube,
@@ -47,21 +48,16 @@ export default function Footer() {
           <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-3"
+              className="inline-flex items-center"
               aria-label="Pogokids Watches home"
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#B89555] text-white shadow-sm">
-                <span className="text-xl font-extrabold">PK</span>
-              </span>
-
-              <span className="min-w-0">
-                <span className="block text-lg font-extrabold leading-6 tracking-wide sm:text-xl">
-                  POGOKIDS
-                </span>
-                <span className="mt-1 block text-[9px] font-semibold uppercase leading-4 tracking-[0.12em] text-[#A18756]">
-                  Watches
-                </span>
-              </span>
+              <Image
+                src="/pogo-logo.png"
+                alt="POGO Kids Watches"
+                width={915}
+                height={373}
+                className="h-12 w-auto sm:h-14"
+              />
             </Link>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-[#817969]">
